@@ -1,44 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css" />
   </head>
-  <body style="background-image: url('https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80'); background-size: cover;">
-  <!--NAVBAR-->
-	<nav class="navbar nav justify-content-center" style="background-color: #170538">
+  <body>
+    <!--NAVBAR-->
+    <nav class="navbar nav justify-content-center" style="background-color: #170538">
         <a class="navbar-brand" href="#"><img src="data:image/png;base64,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" width="69" style="transform: translate(75px, 0)";>
         <div><h1 style="float: right; margin-right: 7px; font-family: sans-serif; color: white">XYZ University<h1></div></a>
       </nav>
-
-    <!--Login Screen-->
-  <div class="box" style="margin:10px auto; width:600px; padding:20px; border:2px solid #333; background: #ffffff;">
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="font-family: sans-serif">
-          LOGIN
-        </a>
-      </div>
-    </nav>
-      <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Username</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1">
-      </div>
-      <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Password</label>
-      <input type="text" class="form-control" id="exampleFormControlInput2">
-      <button type="button" class="btn btn-success" style="margin-top: 10px; font-family: sans-serif" onclick="click()">Login</button>
-  </div>
-    </div>
-   
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script>
-      
-    </script>
-  </body>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Aman Raj</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/ABC001">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/attendance">Attendance</a>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Study Material
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Notesn</a>
+                    <a class="dropdown-item" href="#">Question Bank</a>
+                  </div>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <span class="card" style="width: 25%; margin-top: 10px; margin-left: 5px; float: left;">
+        <img class="card-img-top" src="https://tse3.mm.bing.net/th?id=OIP.fvwpZ_XNHymHjnEnN9jNGQAAAA&pid=Api&P=0&h=180" alt="Card image cap">
+        <span class="card-body">
+          <h5 class="card-title">Aman Raj</h5>
+        </span>
+      </span>
+      <span>
+      <ul class="list-group" style="margin-top: 25px; float: right; width: 73%; transform: translate(0, -15px);">
+        <li class="list-group-item"><b>USN</b>: ABC001</li>
+        <li class="list-group-item"><b>Semester</b>: 1</li>
+        <li class="list-group-item"><b>Roll No</b>: 48</li>
+        <li class="list-group-item"><b>Branch</b>: CSE(Cybersecurity)</li>
+        <li class="list-group-item"><b>Section</b>: H</li>
+      </ul>
+    </span>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+    <script src="jquery/jquery.js"></script>
+    <script type="text/javascript" src='js/bootstrap.min.js'></script>
 </html>
